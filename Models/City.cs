@@ -11,8 +11,9 @@ namespace PruebaPNG.Models
         #region Properties
         public string Id { get; set; }
         public string Name { get; set; }
-        public string State { get; set; }
+        public bool State { get; set; }
         public Int16 Code { get; set; }
+
         #endregion
     }
 }

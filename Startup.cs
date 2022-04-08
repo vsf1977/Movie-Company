@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using PruebaPNG.Application;
 using PruebaPNG.DataAccess;
-using System.Configuration;
+using PruebaPNG.DI;
+using PruebaPNG.Domain;
 
 namespace PruebaPNG
 {
@@ -31,7 +31,7 @@ namespace PruebaPNG
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieCompany", Version = "v1" });
             });
 
-            services.AddEntityFrameworkSqlServer(); 
+            services.AddEntityFrameworkNpgsql(); 
 
             services.AddDbContext<MovieDbContext>((serviceProvider, optionsBuilder) =>
             {
@@ -39,7 +39,8 @@ namespace PruebaPNG
                 optionsBuilder.UseInternalServiceProvider(serviceProvider);
             });
 
-            services.AddTransient<CityAppService>();
+            DependencyInjection.RegisterProfile(services);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
