@@ -19,5 +19,9 @@ namespace PruebaPNG.DataAccess
         }
 
         public DbSet<City> City { get; set; }
+        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Multiplex> Multiplex { get; set; }
+        public DbSet<Movie> Movie { get; set; }
+
     }
 }

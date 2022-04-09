@@ -5,10 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using PruebaPNG.Application;
 using PruebaPNG.DataAccess;
 using PruebaPNG.DI;
-using PruebaPNG.Domain;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace PruebaPNG
 {
@@ -24,11 +25,14 @@ namespace PruebaPNG
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieCompany", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieCompany", Version = "v1" });                
+                c.IncludeXmlComments(xmlPath);
             });
 
             services.AddEntityFrameworkNpgsql(); 
@@ -37,7 +41,7 @@ namespace PruebaPNG
             {
                 optionsBuilder.UseSqlServer(Configuration.GetValue<string>("ConnectionString"));
                 optionsBuilder.UseInternalServiceProvider(serviceProvider);
-            });
+            });                        
 
             DependencyInjection.RegisterProfile(services);
 

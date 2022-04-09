@@ -6,7 +6,7 @@ namespace PruebaPNG.Models
     /// Encapsula las propiedades que definen una
     /// entidad ejemplo
     /// </summary>
-    public class City 
+    public class Genre 
     {
         #region Properties
         public string Id { get; set; }

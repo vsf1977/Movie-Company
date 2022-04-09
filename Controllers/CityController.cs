@@ -5,17 +5,22 @@ namespace PruebaPNG.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MoviecompanyController : ControllerBase
+    public class CityController : ControllerBase
     {
         public CityApplicationService _cityAppService;
 
-        public MoviecompanyController(CityApplicationService cityAppService)
+        public CityController(CityApplicationService cityAppService)
         {
             _cityAppService = cityAppService;
         }
 
 
+        /// <summary>
+        /// Listado completo de ciudades
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
+        [Route("GetAll")]
         public ActionResult<dynamic> GetALL()
         {
             return _cityAppService.GetAll();

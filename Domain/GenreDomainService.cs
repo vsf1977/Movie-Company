@@ -6,17 +6,17 @@ using System.Linq;
 
 namespace PruebaPNG.Domain
 {
-    public class CityDomainService
+    public class GenreDomainService
     {
         private MovieDbContext _context;
-        public CityDomainService(MovieDbContext movieDbContext)
+        public GenreDomainService(MovieDbContext movieDbContext)
         {
             _context = movieDbContext;
         }
 
         public ActionResult<dynamic> GetAll()
-        {            
-            return _context.City.ToList();
+        {
+            return _context.Genre.ToList();
         }
 
     }

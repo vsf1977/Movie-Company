@@ -5,13 +5,13 @@ using System;
 
 namespace PruebaPNG.Application
 {
-    public class CityApplicationService
+    public class MovieApplicationService
     {
-        private CityDomainService _cityDomainService;
+        private MovieDomainService _movieDomainService;
 
-        public CityApplicationService(CityDomainService cityDomainService)
+        public MovieApplicationService(MovieDomainService movieDomainService)
         {
-            _cityDomainService = cityDomainService;
+            _movieDomainService = movieDomainService;
         }
 
 
@@ -19,7 +19,7 @@ namespace PruebaPNG.Application
         {
             try
             {
-                var res = _cityDomainService.GetAll();
+                var res = _movieDomainService.GetAll();
                 return res;
 
             }
