@@ -1,0 +1,42 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2
+-- Dumped by pg_dump version 14.2
+
+-- Started on 2022-04-09 23:17:23
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3316 (class 0 OID 16424)
+-- Dependencies: 211
+-- Data for Name: Multiplex; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public."Multiplex" VALUES ('6abbf522-e44e-4a7b-b994-75c23d1bd6c4', 'Cine2-Barranquilla', true, '33d5b96e-bd9a-4e8d-a93c-9f58472c6d11');
+INSERT INTO public."Multiplex" VALUES ('b371ceaf-d738-43a3-b4f5-9c70ee14703c', 'Cine1-Barranquilla', true, '33d5b96e-bd9a-4e8d-a93c-9f58472c6d11');
+INSERT INTO public."Multiplex" VALUES ('b62ed6e0-150b-48a3-ad24-f20857b55be9', 'Cine2-Bogotá', true, 'f288290a-b120-4bd7-a733-700b837c9aae');
+INSERT INTO public."Multiplex" VALUES ('141cf03d-a80c-49c2-8634-9372183aca7c', 'Cine2-Medellin', true, 'b3e65801-12f9-4a7f-bf9f-05dddfa80ee9');
+INSERT INTO public."Multiplex" VALUES ('a2213283-f530-4efd-8aa6-7e40c96a97c8', 'Cine1-Medellin', true, 'b3e65801-12f9-4a7f-bf9f-05dddfa80ee9');
+INSERT INTO public."Multiplex" VALUES ('47177731-9549-4d51-ba18-8384a0fcacd3', 'Cine1-Cartagena', true, 'e88498ac-95d7-47ad-addc-975a500be927');
+INSERT INTO public."Multiplex" VALUES ('4df594ed-cc74-4efa-bf89-8fa8757a0307', 'Cine1-Bogotá', false, 'f288290a-b120-4bd7-a733-700b837c9aae');
+INSERT INTO public."Multiplex" VALUES ('786382ae-3dc5-42a5-a87c-8721346cc78a', 'Cine2-Cartagena', false, 'e88498ac-95d7-47ad-addc-975a500be927');
+
+
+-- Completed on 2022-04-09 23:17:24
+
+--
+-- PostgreSQL database dump complete
+--
+

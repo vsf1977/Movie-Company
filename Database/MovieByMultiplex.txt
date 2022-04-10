@@ -1,0 +1,59 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2
+-- Dumped by pg_dump version 14.2
+
+-- Started on 2022-04-09 23:16:33
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3319 (class 0 OID 16507)
+-- Dependencies: 213
+-- Data for Name: MovieByMultiplex; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public."MovieByMultiplex" VALUES ('08427377-7abe-4a25-b2ce-eb8edc1967e7', '47177731-9549-4d51-ba18-8384a0fcacd3', 'e85ec651-27e4-46b7-b20e-42327dd15336', '2022-04-09 21:56:24.616921-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('1470d154-f418-481c-8c7d-b637e320d7e6', '786382ae-3dc5-42a5-a87c-8721346cc78a', '22946990-8f43-48be-a2c8-b419643b124d', '2022-04-09 21:56:28.18168-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('c79864dc-b00f-44ac-af28-c652ab5bd841', 'a2213283-f530-4efd-8aa6-7e40c96a97c8', '79794713-d1c9-4560-8d97-ae216592da52', '2022-04-09 19:05:43.341375-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('1470d154-f418-481c-8c7d-b637e320d7e6', '141cf03d-a80c-49c2-8634-9372183aca7c', 'f6f497d0-29da-4a29-8fbc-eae596d5debc', '2022-04-09 21:56:30.72281-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('c51a7df4-ad9a-46d1-b098-6ee6c9d8f470', '47177731-9549-4d51-ba18-8384a0fcacd3', '14db6cf9-b061-4376-9934-7b204388b994', '2022-04-09 21:56:51.889252-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('e77c62d7-3ef3-4b85-9dfb-1d83df31c02f', 'a2213283-f530-4efd-8aa6-7e40c96a97c8', 'c576ad2b-1b3d-4f25-958e-80d53dce4e68', '2022-04-09 21:56:58.125367-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('1dde3ccd-561d-40f0-a1c7-a3454e91095c', '4df594ed-cc74-4efa-bf89-8fa8757a0307', 'cecd29aa-e99d-41a8-b97f-4c05c4ada71a', '2022-04-09 21:57:00.843065-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('08427377-7abe-4a25-b2ce-eb8edc1967e7', 'b62ed6e0-150b-48a3-ad24-f20857b55be9', '58ad62c2-e4d7-49d0-a78a-027b7bfba642', '2022-04-09 21:57:02.34832-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('c51a7df4-ad9a-46d1-b098-6ee6c9d8f470', 'b371ceaf-d738-43a3-b4f5-9c70ee14703c', '5291bc61-61ba-4262-b291-3a4f87a3544f', '2022-04-09 21:57:04.914456-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('c79864dc-b00f-44ac-af28-c652ab5bd841', 'b62ed6e0-150b-48a3-ad24-f20857b55be9', '932370b3-682b-457a-8a7a-7337ae6ba2fc', '2022-04-09 21:57:07.562333-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('1470d154-f418-481c-8c7d-b637e320d7e6', 'a2213283-f530-4efd-8aa6-7e40c96a97c8', 'd8b6f9d0-008a-41c8-98e3-030711971f9a', '2022-04-09 21:57:09.988507-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('996eae63-76c3-4eea-aec7-758510a66010', '47177731-9549-4d51-ba18-8384a0fcacd3', '3b2b389d-7603-4c16-91e7-142560c7a727', '2022-04-09 21:57:16.376485-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('996eae63-76c3-4eea-aec7-758510a66010', 'b62ed6e0-150b-48a3-ad24-f20857b55be9', '557a338a-403f-4912-b8e1-768fb65e385b', '2022-04-09 21:57:19.658304-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('996eae63-76c3-4eea-aec7-758510a66010', '141cf03d-a80c-49c2-8634-9372183aca7c', 'fdc2497a-6efd-4e6a-a4c8-37f56b438557', '2022-04-09 21:57:25.019479-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('4976592c-44fc-4c09-94bc-78b5adcbf385', 'b62ed6e0-150b-48a3-ad24-f20857b55be9', 'c680a39b-f950-4ac7-b5d3-1b1b2ad48bf4', '2022-04-09 21:57:28.704767-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('75d8bdf2-de85-4240-b489-56960897b820', '4df594ed-cc74-4efa-bf89-8fa8757a0307', '7f8d06c6-cebb-4bef-9484-01d587f22f20', '2022-04-09 21:31:35.148138-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('08427377-7abe-4a25-b2ce-eb8edc1967e7', '786382ae-3dc5-42a5-a87c-8721346cc78a', '6d9a963e-67be-47d9-9acc-9cc131eb3447', '2022-04-09 21:31:53.743209-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('75d8bdf2-de85-4240-b489-56960897b820', '786382ae-3dc5-42a5-a87c-8721346cc78a', 'b3e46342-023f-44fa-9fb4-5dc0df68daf4', '2022-04-09 21:32:02.555491-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('1dde3ccd-561d-40f0-a1c7-a3454e91095c', '6abbf522-e44e-4a7b-b994-75c23d1bd6c4', '4928ff79-fa27-41d2-b179-14f58c928874', '2022-04-09 21:32:08.555403-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('e77c62d7-3ef3-4b85-9dfb-1d83df31c02f', '4df594ed-cc74-4efa-bf89-8fa8757a0307', '98bc96ca-7c0e-48a0-8342-a6a6270f3fc8', '2022-04-09 21:32:16.744155-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('a48fe834-4136-404e-ba60-d5dcfe8e261c', 'b62ed6e0-150b-48a3-ad24-f20857b55be9', 'b334c276-0919-4e99-ac0d-46fbc74a0880', '2022-04-09 21:32:25.020541-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('4976592c-44fc-4c09-94bc-78b5adcbf385', 'b371ceaf-d738-43a3-b4f5-9c70ee14703c', '1a77dd7c-d9e1-45c2-a236-3f04419f70e6', '2022-04-09 21:32:34.227669-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('a48fe834-4136-404e-ba60-d5dcfe8e261c', '786382ae-3dc5-42a5-a87c-8721346cc78a', 'd21be868-41de-4be6-9eb7-1b91c06deb50', '2022-04-09 21:32:40.173717-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('e77c62d7-3ef3-4b85-9dfb-1d83df31c02f', 'b62ed6e0-150b-48a3-ad24-f20857b55be9', 'a40e956c-01ee-49df-9d95-34364f7c4e20', '2022-04-09 21:32:47.183311-05');
+INSERT INTO public."MovieByMultiplex" VALUES ('996eae63-76c3-4eea-aec7-758510a66010', '6abbf522-e44e-4a7b-b994-75c23d1bd6c4', '311e29fd-8075-474e-86d6-6c10417120f3', '2022-04-09 21:32:54.655002-05');
+
+
+-- Completed on 2022-04-09 23:16:33
+
+--
+-- PostgreSQL database dump complete
+--
+

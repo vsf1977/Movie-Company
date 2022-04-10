@@ -1,0 +1,39 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2
+-- Dumped by pg_dump version 14.2
+
+-- Started on 2022-04-09 23:14:52
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3317 (class 0 OID 16411)
+-- Dependencies: 210
+-- Data for Name: Genre; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public."Genre" VALUES ('dc1e58ca-e802-435c-9c79-d32fab61be5c', 'Terror', true);
+INSERT INTO public."Genre" VALUES ('b39a99b6-9fb3-4bc1-bcb4-9ff93efeb670', 'Acción', true);
+INSERT INTO public."Genre" VALUES ('4a5799ac-9e0b-4eed-94ef-f7c2d8d849cd', 'Drama', true);
+INSERT INTO public."Genre" VALUES ('178ef436-a101-42a0-a0db-d258f1e9c958', 'Comedia', true);
+INSERT INTO public."Genre" VALUES ('582c80da-5b4e-4e33-a7f1-320fc5c583f8', 'Infantil', true);
+
+
+-- Completed on 2022-04-09 23:14:52
+
+--
+-- PostgreSQL database dump complete
+--
+

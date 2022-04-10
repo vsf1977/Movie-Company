@@ -1,0 +1,128 @@
+-- Database: Moviemanagement
+
+-- DROP DATABASE IF EXISTS "Moviemanagement";
+
+CREATE DATABASE "Moviemanagement"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Mexico.1252'
+    LC_CTYPE = 'Spanish_Mexico.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+-- Table: public.City
+
+-- DROP TABLE IF EXISTS public."City";
+
+CREATE TABLE IF NOT EXISTS public."City"
+(
+    "Id" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Name" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "State" boolean NOT NULL,
+    CONSTRAINT "City_pkey" PRIMARY KEY ("Id"),
+    CONSTRAINT "City_Name_key" UNIQUE ("Name")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."City"
+    OWNER to postgres;
+
+-- Table: public.Genre
+
+-- DROP TABLE IF EXISTS public."Genre";
+
+CREATE TABLE IF NOT EXISTS public."Genre"
+(
+    "Id" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Name" character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    "State" boolean NOT NULL,
+    CONSTRAINT "Genre_pkey" PRIMARY KEY ("Id"),
+    CONSTRAINT "Genre_Name_key" UNIQUE ("Name")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Genre"
+    OWNER to postgres;
+
+
+-- Table: public.Movie
+
+-- DROP TABLE IF EXISTS public."Movie";
+
+CREATE TABLE IF NOT EXISTS public."Movie"
+(
+    "Id" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Name" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Poster" character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    "Trailer" character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    "State" boolean NOT NULL,
+    "GenreId" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Movie_pkey" PRIMARY KEY ("Id"),
+    CONSTRAINT "Movie_GenreId_fkey" FOREIGN KEY ("GenreId")
+        REFERENCES public."Genre" ("Id") MATCH SIMPLE
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT
+        NOT VALID
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Movie"
+    OWNER to postgres;
+
+-- Table: public.MovieByMultiplex
+
+-- DROP TABLE IF EXISTS public."MovieByMultiplex";
+
+CREATE TABLE IF NOT EXISTS public."MovieByMultiplex"
+(
+    "MovieId" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "MultiplexId" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Id" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Schedule" timestamp with time zone,
+    CONSTRAINT "MovieByMultiplex_pkey" PRIMARY KEY ("Id"),
+    CONSTRAINT "MovieByMultiplex_MovieId_MultiplexId_key" UNIQUE ("MovieId", "MultiplexId"),
+    CONSTRAINT "MovieByMultiplex_MovieId_fkey" FOREIGN KEY ("MovieId")
+        REFERENCES public."Movie" ("Id") MATCH SIMPLE
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT
+        NOT VALID,
+    CONSTRAINT "MovieByMultiplex_MultiplexId_fkey" FOREIGN KEY ("MultiplexId")
+        REFERENCES public."Multiplex" ("Id") MATCH SIMPLE
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT
+        NOT VALID
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."MovieByMultiplex"
+    OWNER to postgres;
+
+
+-- Table: public.Multiplex
+
+-- DROP TABLE IF EXISTS public."Multiplex";
+
+CREATE TABLE IF NOT EXISTS public."Multiplex"
+(
+    "Id" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Name" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "State" boolean NOT NULL,
+    "CityId" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Multiplex_pkey" PRIMARY KEY ("Id"),
+    CONSTRAINT "Multiplex_CityId_fkey" FOREIGN KEY ("CityId")
+        REFERENCES public."City" ("Id") MATCH SIMPLE
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT
+        NOT VALID
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Multiplex"
+    OWNER to postgres;
