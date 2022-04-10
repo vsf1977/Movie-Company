@@ -7,14 +7,19 @@ namespace PruebaPNG.Application
 {
     public class GenreApplicationService
     {
+        #region Fields
         private GenreDomainService _genreDomainService;
+        #endregion 
 
+        #region Constructor
         public GenreApplicationService(GenreDomainService genreDomainService)
         {
             _genreDomainService = genreDomainService;
         }
+        #endregion 
 
 
+        #region Methods
         public ActionResult<dynamic> GetAll()
         {
             try
@@ -28,6 +33,7 @@ namespace PruebaPNG.Application
                 return ex.Message;
             }
         }
+        #endregion
 
     }
 }

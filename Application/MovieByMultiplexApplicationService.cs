@@ -7,14 +7,18 @@ namespace PruebaPNG.Application
 {
     public class MovieByMultiplexApplicationService
     {
+        #region Fields
         private MovieByMultiplexDomainService _movieByMultiplexDomainService;
+        #endregion
 
+        #region Constructor
         public MovieByMultiplexApplicationService(MovieByMultiplexDomainService movieByMultiplexDomainService)
         {
             _movieByMultiplexDomainService = movieByMultiplexDomainService;
         }
+        #endregion
 
-
+        #region Methods
         public ActionResult<dynamic> GetAll()
         {
             try
@@ -28,6 +32,7 @@ namespace PruebaPNG.Application
                 return ex.Message;
             }
         }
+        #endregion
 
     }
 }

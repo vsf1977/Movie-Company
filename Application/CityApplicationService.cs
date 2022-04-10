@@ -7,14 +7,19 @@ namespace PruebaPNG.Application
 {
     public class CityApplicationService
     {
+        #region Fields
         private CityDomainService _cityDomainService;
+        #endregion
 
+        #region Constructor
         public CityApplicationService(CityDomainService cityDomainService)
         {
             _cityDomainService = cityDomainService;
         }
+        #endregion
 
 
+        #region Methods
         public ActionResult<dynamic> GetAll()
         {
             try
@@ -28,6 +33,7 @@ namespace PruebaPNG.Application
                 return ex.Message;
             }
         }
+        #endregion
 
     }
 }

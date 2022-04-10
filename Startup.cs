@@ -25,24 +25,31 @@ namespace PruebaPNG
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //se consigue la ruta del xml para poder generar la documentacion del swagger
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
             services.AddControllers();
+
+            //se genera el swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieCompany", Version = "v1" });                
                 c.IncludeXmlComments(xmlPath);
             });
 
+            //inclusion del entity framework para manejar postgress
             services.AddEntityFrameworkNpgsql(); 
 
+            //se vincula la conexiona a la base de datos
             services.AddDbContext<MovieDbContext>((serviceProvider, optionsBuilder) =>
             {
                 optionsBuilder.UseSqlServer(Configuration.GetValue<string>("ConnectionString"));
                 optionsBuilder.UseInternalServiceProvider(serviceProvider);
             });                        
 
+            //se generan las dependencias de las capas de la aplicacion
             DependencyInjection.RegisterProfile(services);
 
         }

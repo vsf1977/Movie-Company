@@ -7,14 +7,20 @@ namespace PruebaPNG.Application
 {
     public class MultiplexApplicationService
     {
+        #region Fields
         private MultiplexDomainService _multiplexDomainService;
+        #endregion 
 
+
+        #region Constructor
         public MultiplexApplicationService(MultiplexDomainService multiplexDomainService)
         {
             _multiplexDomainService = multiplexDomainService;
         }
+        #endregion 
 
 
+        #region Methods
         public ActionResult<dynamic> GetAll()
         {
             try
@@ -28,6 +34,7 @@ namespace PruebaPNG.Application
                 return ex.Message;
             }
         }
+        #endregion 
 
     }
 }

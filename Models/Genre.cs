@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PruebaPNG.Models
+﻿namespace PruebaPNG.Models
 {
     /// <summary>
     /// Encapsula las propiedades que definen una

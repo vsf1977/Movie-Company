@@ -8,12 +8,18 @@ namespace PruebaPNG.Domain
 {
     public class MovieByMultiplexDomainService
     {
+        #region Fields
         private MovieDbContext _context;
+        #endregion 
+
+        #region Constructor
         public MovieByMultiplexDomainService(MovieDbContext movieDbContext)
         {
             _context = movieDbContext;
         }
+        #endregion 
 
+        #region Methods
         public ActionResult<dynamic> GetAll()
         {
             List<Multiplex> multiplex = _context.Multiplex.Where(x => x.State).ToList();
@@ -39,5 +45,6 @@ namespace PruebaPNG.Domain
             }
             return responseList;
         }
+        #endregion 
     }
 }
