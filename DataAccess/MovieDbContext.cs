@@ -22,6 +22,7 @@ namespace PruebaPNG.DataAccess
         public DbSet<Genre> Genre { get; set; }
         public DbSet<Multiplex> Multiplex { get; set; }
         public DbSet<Movie> Movie { get; set; }
+        public DbSet<MovieByMultiplex> MovieByMultiplex { get; set; }
 
     }
 }

@@ -6,13 +6,12 @@ namespace PruebaPNG.Models
     /// Encapsula las propiedades que definen una
     /// entidad ejemplo
     /// </summary>
-    public class MovieByMultiplex
+    public class Response
     {
         #region Properties
-        public string Id { get; set; }
-        public string MovieId { get; set; }
-        public string MultiplexId { get; set; }
-        public DateTime Schedule { get; set; }
+        public string multiplexName { get; set; }
+        public string movieName { get; set; }
+        public string schedule { get; set; }
 
         #endregion
     }

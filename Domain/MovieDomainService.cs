@@ -16,7 +16,7 @@ namespace PruebaPNG.Domain
 
         public ActionResult<dynamic> GetAll()
         {
-            return _context.Movie.ToList();
+            return _context.Movie.Where(x => x.State).ToList();
         }
 
     }

@@ -17,6 +17,8 @@ namespace PruebaPNG.DI
             services.AddTransient<MultiplexDomainService>();
             services.AddTransient<MovieApplicationService>();
             services.AddTransient<MovieDomainService>();
+            services.AddTransient<MovieByMultiplexApplicationService>();
+            services.AddTransient<MovieByMultiplexDomainService>();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace PruebaPNG.Domain
 
         public ActionResult<dynamic> GetAll()
         {
-            return _context.Multiplex.ToList();
+            return _context.Multiplex.Where(x => x.State).ToList();
         }
 
     }
