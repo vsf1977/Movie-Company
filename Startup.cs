@@ -43,10 +43,9 @@ namespace PruebaPNG
             services.AddEntityFrameworkNpgsql(); 
 
             //se vincula la conexiona a la base de datos
-            services.AddDbContext<MovieDbContext>((serviceProvider, optionsBuilder) =>
+            services.AddDbContext<MovieDbContext>(optionsBuilder=>
             {
-                optionsBuilder.UseSqlServer(Configuration.GetValue<string>("ConnectionString"));
-                optionsBuilder.UseInternalServiceProvider(serviceProvider);
+                optionsBuilder.UseNpgsql(Configuration.GetValue<string>("ConnectionString"));
             });                        
 
             //se generan las dependencias de las capas de la aplicacion

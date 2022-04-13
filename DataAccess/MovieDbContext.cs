@@ -16,18 +16,10 @@ namespace PruebaPNG.DataAccess
         #endregion
 
         #region Constructor
-        public MovieDbContext(IConfiguration configuration)
+        public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options)
         {
-            Configuration = configuration;
         }
         #endregion
 
-        #region Methods
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            base.OnConfiguring(options);
-            options.UseNpgsql(Configuration.GetValue<string>("ConnectionString"));
-        }     
-        #endregion
     }
 }
